@@ -20,22 +20,22 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class 问好控制器集成测试 {
 
     @LocalServerPort
-    private int port;
+    private int 端口;
 
-    private URL base;
+    private URL 本位;
 
     @Autowired
-    private TestRestTemplate template;
+    private TestRestTemplate 模板;
 
     @Before
     public void setUp() throws Exception {
-        this.base = new URL("http://localhost:" + port + "/");
+        this.本位 = new URL("http://localhost:" + 端口 + "/");
     }
 
     @Test
-    public void getHello() throws Exception {
-        ResponseEntity<String> response = template.getForEntity(base.toString(),
+    public void 取问好() throws Exception {
+        ResponseEntity<String> 响应 = 模板.getForEntity(本位.toString(),
                 String.class);
-        assertThat(response.getBody(), equalTo("Spring Boot问好!"));
+        assertThat(响应.getBody(), equalTo("Spring Boot问好!"));
     }
 }
