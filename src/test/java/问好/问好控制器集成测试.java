@@ -28,7 +28,7 @@ public class 问好控制器集成测试 {
     private TestRestTemplate 模板;
 
     @Before
-    public void setUp() throws Exception {
+    public void 初始化() throws Exception {
         this.本位 = new URL("http://localhost:" + 端口 + "/");
     }
 

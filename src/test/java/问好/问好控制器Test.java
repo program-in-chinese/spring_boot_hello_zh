@@ -23,7 +23,7 @@ public class 问好控制器Test {
     private MockMvc mvc;
 
     @Test
-    public void getHello() throws Exception {
+    public void 取问好() throws Exception {
         mvc.perform(MockMvcRequestBuilders.get("/").accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(content().string(equalTo("Spring Boot问好!")));
