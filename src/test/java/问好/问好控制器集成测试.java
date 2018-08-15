@@ -22,19 +22,19 @@ public class 问好控制器集成测试 {
     @LocalServerPort
     private int 端口;
 
-    private URL 本位;
+    private URL 基础网址;
 
     @Autowired
     private TestRestTemplate 模板;
 
     @Before
     public void 初始化() throws Exception {
-        this.本位 = new URL("http://localhost:" + 端口 + "/");
+        this.基础网址 = new URL("http://localhost:" + 端口 + "/");
     }
 
     @Test
     public void 取问好() throws Exception {
-        ResponseEntity<String> 响应 = 模板.getForEntity(本位.toString(),
+        ResponseEntity<String> 响应 = 模板.getForEntity(基础网址.toString(),
                 String.class);
         assertThat(响应.getBody(), equalTo("Spring Boot问好!"));
     }
